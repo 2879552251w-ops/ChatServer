@@ -1,2 +1,2 @@
 # ChatServer
-基于muduo网络库开发，redis作为消息队列，nginx做负载均衡，可工作在集群环境中的聊天服务端与客户端项目
+基于muduo网络库开发，redis作为消息队列，nginx做负载均衡，可工作在集群环境中的聊天服务端与客户端项目，使用muduo，nlohmann的json.hpp
