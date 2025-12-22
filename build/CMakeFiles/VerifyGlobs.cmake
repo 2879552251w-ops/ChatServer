@@ -3,29 +3,29 @@
 cmake_policy(SET CMP0009 NEW)
 
 # SRC at src/client/CMakeLists.txt:2 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/mysql/ChatServer/src/client/*.cpp")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/mysql/ChatServer/ChatServer/src/client/*.cpp")
 set(OLD_GLOB
-  "/home/mysql/ChatServer/src/client/client.cpp"
+  "/home/mysql/ChatServer/ChatServer/src/client/client.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/mysql/ChatServer/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/home/mysql/ChatServer/ChatServer/build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # SRC at src/server/CMakeLists.txt:2 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/mysql/ChatServer/src/server/*.cpp")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/mysql/ChatServer/ChatServer/src/server/*.cpp")
 set(OLD_GLOB
-  "/home/mysql/ChatServer/src/server/ChatServer.cpp"
-  "/home/mysql/ChatServer/src/server/ChatService.cpp"
-  "/home/mysql/ChatServer/src/server/db/db.cpp"
-  "/home/mysql/ChatServer/src/server/model/FriendModel.cpp"
-  "/home/mysql/ChatServer/src/server/model/GroupModel.cpp"
-  "/home/mysql/ChatServer/src/server/model/OfflineMessageModel.cpp"
-  "/home/mysql/ChatServer/src/server/model/UserModle.cpp"
-  "/home/mysql/ChatServer/src/server/model/main.cpp"
-  "/home/mysql/ChatServer/src/server/redis/redis.cpp"
+  "/home/mysql/ChatServer/ChatServer/src/server/ChatServer.cpp"
+  "/home/mysql/ChatServer/ChatServer/src/server/ChatService.cpp"
+  "/home/mysql/ChatServer/ChatServer/src/server/db/db.cpp"
+  "/home/mysql/ChatServer/ChatServer/src/server/model/FriendModel.cpp"
+  "/home/mysql/ChatServer/ChatServer/src/server/model/GroupModel.cpp"
+  "/home/mysql/ChatServer/ChatServer/src/server/model/OfflineMessageModel.cpp"
+  "/home/mysql/ChatServer/ChatServer/src/server/model/UserModle.cpp"
+  "/home/mysql/ChatServer/ChatServer/src/server/model/main.cpp"
+  "/home/mysql/ChatServer/ChatServer/src/server/redis/redis.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/mysql/ChatServer/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/home/mysql/ChatServer/ChatServer/build/CMakeFiles/cmake.verify_globs")
 endif()

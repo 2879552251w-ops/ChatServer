@@ -57,10 +57,10 @@ RM = /usr/local/cmake-3.22.1/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mysql/ChatServer
+CMAKE_SOURCE_DIR = /home/mysql/ChatServer/ChatServer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mysql/ChatServer/build
+CMAKE_BINARY_DIR = /home/mysql/ChatServer/ChatServer/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/mysql/ChatServer/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mysql/ChatServer/build/CMakeFiles /home/mysql/ChatServer/build/src/client//CMakeFiles/progress.marks
-	cd /home/mysql/ChatServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mysql/ChatServer/build/CMakeFiles 0
+	cd /home/mysql/ChatServer/ChatServer/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mysql/ChatServer/ChatServer/build/CMakeFiles /home/mysql/ChatServer/ChatServer/build/src/client//CMakeFiles/progress.marks
+	cd /home/mysql/ChatServer/ChatServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mysql/ChatServer/ChatServer/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/mysql/ChatServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/clean
+	cd /home/mysql/ChatServer/ChatServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,23 +103,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/mysql/ChatServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/preinstall
+	cd /home/mysql/ChatServer/ChatServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/mysql/ChatServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/preinstall
+	cd /home/mysql/ChatServer/ChatServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/mysql/ChatServer/build && $(CMAKE_COMMAND) -P /home/mysql/ChatServer/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/mysql/ChatServer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/mysql/ChatServer/ChatServer/build && $(CMAKE_COMMAND) -P /home/mysql/ChatServer/ChatServer/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/mysql/ChatServer/ChatServer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/client/CMakeFiles/ChatClient.dir/rule:
-	cd /home/mysql/ChatServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/CMakeFiles/ChatClient.dir/rule
+	cd /home/mysql/ChatServer/ChatServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/CMakeFiles/ChatClient.dir/rule
 .PHONY : src/client/CMakeFiles/ChatClient.dir/rule
 
 # Convenience name for target.
@@ -128,7 +128,7 @@ ChatClient: src/client/CMakeFiles/ChatClient.dir/rule
 
 # fast build rule for target.
 ChatClient/fast:
-	cd /home/mysql/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/build
+	cd /home/mysql/ChatServer/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/build
 .PHONY : ChatClient/fast
 
 client.o: client.cpp.o
@@ -136,7 +136,7 @@ client.o: client.cpp.o
 
 # target to build an object file
 client.cpp.o:
-	cd /home/mysql/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/client.cpp.o
+	cd /home/mysql/ChatServer/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/client.cpp.o
 .PHONY : client.cpp.o
 
 client.i: client.cpp.i
@@ -144,7 +144,7 @@ client.i: client.cpp.i
 
 # target to preprocess a source file
 client.cpp.i:
-	cd /home/mysql/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/client.cpp.i
+	cd /home/mysql/ChatServer/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/client.cpp.i
 .PHONY : client.cpp.i
 
 client.s: client.cpp.s
@@ -152,7 +152,7 @@ client.s: client.cpp.s
 
 # target to generate assembly for a file
 client.cpp.s:
-	cd /home/mysql/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/client.cpp.s
+	cd /home/mysql/ChatServer/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/client.cpp.s
 .PHONY : client.cpp.s
 
 # Help Target
@@ -178,7 +178,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/mysql/ChatServer/build && $(CMAKE_COMMAND) -P /home/mysql/ChatServer/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/mysql/ChatServer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/mysql/ChatServer/ChatServer/build && $(CMAKE_COMMAND) -P /home/mysql/ChatServer/ChatServer/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/mysql/ChatServer/ChatServer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

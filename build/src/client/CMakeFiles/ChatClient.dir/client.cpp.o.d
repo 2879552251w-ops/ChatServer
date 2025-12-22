@@ -1,11 +1,11 @@
 src/client/CMakeFiles/ChatClient.dir/client.cpp.o: \
- /home/mysql/ChatServer/src/client/client.cpp /usr/include/stdc-predef.h \
- /usr/include/sys/socket.h /usr/include/features.h \
- /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/include/sys/uio.h /usr/include/sys/types.h \
- /usr/include/bits/types.h /usr/include/bits/typesizes.h \
- /usr/include/time.h \
+ /home/mysql/ChatServer/ChatServer/src/client/client.cpp \
+ /usr/include/stdc-predef.h /usr/include/sys/socket.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h /usr/include/sys/uio.h \
+ /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h \
  /opt/rh/devtoolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include/stddef.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/byteswap-16.h \
@@ -226,7 +226,8 @@ src/client/CMakeFiles/ChatClient.dir/client.cpp.o: \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/mask_array.h \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/indirect_array.h \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/cstring \
- /usr/include/string.h /home/mysql/ChatServer/include/public.hpp \
- /home/mysql/ChatServer/include/server/model/User.hpp \
- /home/mysql/ChatServer/include/server/model/Group.hpp \
- /home/mysql/ChatServer/include/server/model/GroupUser.hpp
+ /usr/include/string.h \
+ /home/mysql/ChatServer/ChatServer/include/public.hpp \
+ /home/mysql/ChatServer/ChatServer/include/server/model/User.hpp \
+ /home/mysql/ChatServer/ChatServer/include/server/model/Group.hpp \
+ /home/mysql/ChatServer/ChatServer/include/server/model/GroupUser.hpp

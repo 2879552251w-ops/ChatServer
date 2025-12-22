@@ -57,10 +57,10 @@ RM = /usr/local/cmake-3.22.1/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mysql/ChatServer
+CMAKE_SOURCE_DIR = /home/mysql/ChatServer/ChatServer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mysql/ChatServer/build
+CMAKE_BINARY_DIR = /home/mysql/ChatServer/ChatServer/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mysql/ChatServer/build/CMakeFiles /home/mysql/ChatServer/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mysql/ChatServer/ChatServer/build/CMakeFiles /home/mysql/ChatServer/ChatServer/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mysql/ChatServer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mysql/ChatServer/ChatServer/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -113,22 +113,22 @@ preinstall/fast:
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -P /home/mysql/ChatServer/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/mysql/ChatServer/ChatServer/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named muduoserver
+# Target rules for targets named ChatServer
 
 # Build rule for target.
-muduoserver: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 muduoserver
-.PHONY : muduoserver
+ChatServer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ChatServer
+.PHONY : ChatServer
 
 # fast build rule for target.
-muduoserver/fast:
-	$(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/muduoserver.dir/build.make src/server/CMakeFiles/muduoserver.dir/build
-.PHONY : muduoserver/fast
+ChatServer/fast:
+	$(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/build
+.PHONY : ChatServer/fast
 
 #=============================================================================
 # Target rules for targets named ChatClient
@@ -152,7 +152,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ChatClient"
-	@echo "... muduoserver"
+	@echo "... ChatServer"
 .PHONY : help
 
 
@@ -164,7 +164,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P /home/mysql/ChatServer/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/mysql/ChatServer/ChatServer/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

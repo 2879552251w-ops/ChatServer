@@ -1,4 +1,4 @@
-# Install script for directory: /home/mysql/ChatServer/src
+# Install script for directory: /home/mysql/ChatServer/ChatServer/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/mysql/ChatServer/build/src/server/cmake_install.cmake")
-  include("/home/mysql/ChatServer/build/src/client/cmake_install.cmake")
+  include("/home/mysql/ChatServer/ChatServer/build/src/server/cmake_install.cmake")
+  include("/home/mysql/ChatServer/ChatServer/build/src/client/cmake_install.cmake")
 
 endif()
 

@@ -3,7 +3,7 @@ project(ChatServer LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_compile_options(-Wall  -pthread -g)#-Wextra
+add_compile_options( -pthread -g)#-Wextra -Wall
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
 

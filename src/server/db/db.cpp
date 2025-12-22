@@ -1,4 +1,3 @@
-#pragma once
 #include "db.hpp"
 #include <mysql/mysql.h>
 #include <muduo/base/Logging.h>
