@@ -1,1 +1,0 @@
-/opt/rh/devtoolset-9/root/usr/bin/c++ CMakeFiles/ChatClient.dir/client.cpp.o -o ../../../bin/ChatClient   -L/usr/lib64/mysql  -Wl,-rpath,/usr/lib64/mysql -lmuduo_net -lpthread 
