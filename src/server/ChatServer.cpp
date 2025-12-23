@@ -61,7 +61,6 @@ ChatServer::ChatServer(muduo::net::EventLoop *loop,
             auto msgHandler = ChatService::instance()->getServe(msgType);
             msgHandler(conn, js, time);
         });
-    //暂时这样，集群肯定要改
-    ChatService::instance()->reset();
+
     server_.setThreadNum(4);
 }
