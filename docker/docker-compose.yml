@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  # --- 中间件服务 ---
+  mysql:
+    image: mysql:8.0
+    container_name: chat_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: chat_db
+    volumes:
+      - ./sql_data:/var/lib/mysql # 数据持久化
+      #- ./init.sql:/docker-entrypoint-initdb.d/init.sql # 自动建表脚本
+    networks:
+      - chat_net
+
+  redis:
+    image: redis:7.0
+    container_name: chat_redis
+    networks:
+      - chat_net
+
+  # --- C++ 业务服务器节点 1 ---
+  chat-server-1:
+    build: .             # 使用当前目录的 Dockerfile 构建
+    container_name: chat_node_1
+    depends_on:
+      - mysql
+      - redis
+    environment:
+      - SERVER_ID=1           # 代码要读取这个环境变量来区分节点
+      - DB_HOST=mysql         # 直接写节点名字，因为内部有dns
+      - REDIS_HOST=redis
+      - BIND_PORT=8000
+    networks:
+      - chat_net
+    # 如果想让宿主机直接调试这个节点，可以映射端口，否则不需要映射，全靠 Nginx 转发
+    # ports:
+    #   - "8001:8000"
+
+  # --- C++ 业务服务器节点 2 ---
+  chat-server-2:
+    build: .
+    container_name: chat_node_2
+    depends_on:
+      - mysql
+      - redis
+    environment:
+      - SERVER_ID=2
+      - DB_HOST=mysql
+      - REDIS_HOST=redis
+      - BIND_PORT=8000
+    networks:
+      - chat_net
+
+  # --- 负载均衡器 ---
+  nginx:
+    image: nginx:latest
+    container_name: chat_lb
+    ports:
+      - "8888:8888"  # 宿主机访问入口
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro # 挂载配置文件
+    depends_on:
+      - chat-server-1
+      - chat-server-2
+    networks:
+      - chat_net
+
+# --- 自定义网络 ---
+networks:
+  chat_net:
+    driver: bridge
