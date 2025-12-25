@@ -23,7 +23,8 @@ services:
   # --- C++ 业务服务器节点 1 ---
   chat-server-1:
     build: .             # 使用当前目录的 Dockerfile 构建
-    container_name: chat_node_1
+    image: ChatServer:1.0 #定义镜像名字
+    container_name: chat_node_1 #容器名字
     depends_on:
       - mysql
       - redis
