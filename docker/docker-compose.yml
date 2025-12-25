@@ -42,6 +42,7 @@ services:
   # --- C++ 业务服务器节点 2 ---
   chat-server-2:
     build: .
+    image: ChatServer:1.0 #定义镜像名字
     container_name: chat_node_2
     depends_on:
       - mysql
