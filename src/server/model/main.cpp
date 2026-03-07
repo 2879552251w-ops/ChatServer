@@ -8,6 +8,8 @@ void resetHandler(int)
     exit(0);
 }
 
+
+
 int main()
 {
     signal(SIGINT,resetHandler);

@@ -3,10 +3,12 @@
 #include <mysql/mysql.h>
 
 // 数据库配置信息
-static std::string server = "127.0.0.1";
-static std::string user = "root";
-static std::string password = "229578";
-static std::string dbname = "chat";
+namespace{
+const std::string server = "127.0.0.1";
+const std::string user = "root";
+const std::string password = "229578";
+const std::string dbname = "chat";
+}
 // 数据库操作类
 class MySQL
 {

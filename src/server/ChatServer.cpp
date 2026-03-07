@@ -14,7 +14,7 @@ ChatServer::ChatServer(muduo::net::EventLoop *loop,
               nameArg,muduo::net::TcpServer::kReusePort),
       loop_(loop)
 {
-    server_.setConnectionCallback([this](const muduo::net::TcpConnectionPtr &conn)
+    server_.setConnectionCallback([this](const muduo::net::TcpConnectionPtr &conn) 
                                   {
                                       if (conn->connected())
                                       {
@@ -32,7 +32,8 @@ ChatServer::ChatServer(muduo::net::EventLoop *loop,
                muduo::net::Buffer *buffer,
                muduo::Timestamp time)
         {
-            std::string buf = buffer->retrieveAllAsString();
+            //no safe FixMe
+            std::string buf = buffer->retrieveAllAsString();(void)time;
             // 数据反序列化
             json js;
             try

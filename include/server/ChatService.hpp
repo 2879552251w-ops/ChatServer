@@ -58,7 +58,7 @@ private:
         }
     };
 
-    std::unordered_map<EnMsgType, MsgHandler, EnumClassHash> msgHandMap_;//储存业务函数
+    std::unordered_map<EnMsgType, MsgHandler, EnumClassHash> msgHandMap_;//储存业务函数 Dispather
 
     std::mutex mutex_;
     std::unordered_map<UserId,muduo::net::TcpConnectionPtr> users_;       //储存在线人员

@@ -39,6 +39,7 @@ bool MySQL::update(std::string sql)
                  << sql << "更新失败!";
         return false;
     }
+
     return true;
 }
 // 查询操作

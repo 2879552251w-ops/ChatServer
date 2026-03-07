@@ -11,18 +11,21 @@ ChatService *ChatService::instance()
 
 ChatService::ChatService()
 {
-    msgHandMap_[EnMsgType::LOGIN_MSG] = std::bind(&ChatService::login, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
-    msgHandMap_.emplace(EnMsgType::REG_MSG, std::bind(&ChatService::reg, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-    msgHandMap_.emplace(EnMsgType::ONE_CHAT_MSG, std::bind(&ChatService::oneChat, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-    msgHandMap_.emplace(EnMsgType::ADD_FRIEND_MSG, std::bind(&ChatService::addfriend, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-    msgHandMap_.emplace(EnMsgType::CREATE_GROUP_MSG, std::bind(&ChatService::createGroup, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-    msgHandMap_.emplace(EnMsgType::ADD_GROUP_MSG, std::bind(&ChatService::addGroup, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-    msgHandMap_.emplace(EnMsgType::GROUP_CHAT_MSG, std::bind(&ChatService::groupChat, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-    msgHandMap_.emplace(EnMsgType::LOGOUT_MSG, std::bind(&ChatService::logout, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+    using std::placeholders::_1;
+    using std::placeholders::_2;
+    using std::placeholders::_3;
+    msgHandMap_[EnMsgType::LOGIN_MSG] = std::bind(&ChatService::login, this, _1, _2, _3);
+    msgHandMap_.emplace(EnMsgType::REG_MSG, std::bind(&ChatService::reg, this, _1, _2, _3));
+    msgHandMap_.emplace(EnMsgType::ONE_CHAT_MSG, std::bind(&ChatService::oneChat, this, _1, _2, _3));
+    msgHandMap_.emplace(EnMsgType::ADD_FRIEND_MSG, std::bind(&ChatService::addfriend, this, _1, _2, _3));
+    msgHandMap_.emplace(EnMsgType::CREATE_GROUP_MSG, std::bind(&ChatService::createGroup, this, _1, _2, _3));
+    msgHandMap_.emplace(EnMsgType::ADD_GROUP_MSG, std::bind(&ChatService::addGroup, this, _1, _2, _3));
+    msgHandMap_.emplace(EnMsgType::GROUP_CHAT_MSG, std::bind(&ChatService::groupChat, this, _1, _2, _3));
+    msgHandMap_.emplace(EnMsgType::LOGOUT_MSG, std::bind(&ChatService::logout, this, _1, _2, _3));
 
     if (redis_.connect())
     {
-        redis_.init_notify_handler(std::bind(&ChatService::handleRedisSubscribeMessage,this, std::placeholders::_1, std::placeholders::_2));
+        redis_.init_notify_handler(std::bind(&ChatService::handleRedisSubscribeMessage, this, _1, _2));
     }
 }
 
@@ -200,7 +203,9 @@ void ChatService::oneChat(const muduo::net::TcpConnectionPtr &conn,
     else // 离线消息
         offlinemsgmodel_.insert(peerid, js.dump());
 }
-void ChatService::logout(const muduo::net::TcpConnectionPtr &conn, json &js, muduo::Timestamp time)
+void ChatService::logout(const muduo::net::TcpConnectionPtr &conn,
+                         json &js,
+                         muduo::Timestamp time)
 {
     UserId id = js["id"];
     {
@@ -341,11 +346,11 @@ void ChatService::handleRedisSubscribeMessage(UserId userid, std::string msg)
 {
     std::lock_guard<std::mutex> lock(mutex_);
     auto it = users_.find(userid);
-    if(it!=users_.end())
+    if (it != users_.end())
     {
         it->second->send(msg);
         return;
     }
 
-    offlinemsgmodel_.insert(userid,msg);
+    offlinemsgmodel_.insert(userid, msg);
 }
